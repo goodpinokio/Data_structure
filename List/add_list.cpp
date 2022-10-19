@@ -14,7 +14,7 @@ ListNode *add(ListNode *head, element item) {
     head = p;
     return head;
 }
-//µ¥ÀÌÅÍÀÇ ÇÕÀ» ±¸ÇÏ´Â ÇÔ¼ö
+//ë°ì´í„°ì˜ í•©ì„ êµ¬í•˜ëŠ” í•¨ìˆ˜
 int total(ListNode*head) {
     ListNode *p=head;
     int sum=0;
@@ -28,13 +28,13 @@ int total(ListNode*head) {
 int main(void) {
     ListNode *head = NULL;
     int n=0, v=0;
-    printf("³ëµåÀÇ °³¼ö : ");
+    printf("ë…¸ë“œì˜ ê°œìˆ˜ : ");
     scanf("%d", &n);
     for(int i = 1; i<=n; i++) {
-        printf("³ëµå #%d µ¥ÀÌÅÍ : ", i);
+        printf("ë…¸ë“œ #%d ë°ì´í„° : ", i);
         scanf("%d", &v);
         head = add(head, v);
     }
-    printf("¿¬°á ¸®½ºÆ®ÀÇ µ¥ÀÌÅÍ ÇÕ : %d\n", total(head));
+    printf("ì—°ê²° ë¦¬ìŠ¤íŠ¸ì˜ ë°ì´í„° í•© : %d\n", total(head));
     return 0;
 }
