@@ -12,7 +12,7 @@ void error(const char *msg) {
     exit(1);
 }
 
-//¸®½ºÆ®¸¦ ¸¶Áö¸·¿¡ Ãß°¡ÇÏ´Â ÇÔ¼ö
+//ë¦¬ìŠ¤íŠ¸ë¥¼ ë§ˆì§€ë§‰ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
 ListNode *insert_last(ListNode *head, element item) {
     ListNode *p = (ListNode*)malloc(sizeof(ListNode));
     p->data = item;
@@ -29,7 +29,7 @@ ListNode *insert_last(ListNode *head, element item) {
     return head;
 }
 
-//Æ¯Á¤ÇÑ °ªÀ» ¾ø¾Ö´Â ÇÔ¼ö 
+//íŠ¹ì •í•œ ê°’ì„ ì—†ì• ëŠ” í•¨ìˆ˜ 
 ListNode *del(ListNode *head, element item) {
     ListNode *removed = head, *p = NULL;
     while(removed->data != item) {
@@ -56,17 +56,17 @@ int main() {
     ListNode *head = NULL;
     int n, v;
     int del1; 
-    printf("³ëµåÀÇ °³¼ö: ");
+    printf("ë…¸ë“œì˜ ê°œìˆ˜: ");
     scanf("%d", &n);
     for(int i = 1; i<= n;i++) {
-        printf("³ëµå #%d µ¥ÀÌÅÍ: ", i);
+        printf("ë…¸ë“œ #%d ë°ì´í„°: ", i);
         scanf("%d", &v);
         head = insert_last(head,v);
     }
-    printf("Ãâ·Â: ");
+    printf("ì¶œë ¥: ");
     print_list(head);
     printf("\n");
-	printf("»èÁ¦ÇÒ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+	printf("ì‚­ì œí•  ê°’ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 	scanf("%d",&del1);
 	printf("\n");
 	
