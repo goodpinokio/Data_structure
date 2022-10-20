@@ -38,23 +38,23 @@ int main(void)
 	ListNode *head = NULL;
 	element data;
 	
-	strcpy(data.name,"»ç°ú");
+	strcpy(data.name,"Â»Ã§Â°Ãº");
 	head= insert_first(head,data);
 	print_list(head);
 	
-	strcpy(data.name,"¹Ù³ª³ª");
+	strcpy(data.name,"Â¹Ã™Â³ÂªÂ³Âª");
 	head= insert_first(head,data);
 	print_list(head);
 	
-	strcpy(data.name,"Å°À§");
+	strcpy(data.name,"Ã…Â°Ã€Â§");
 	head= insert_first(head,data);
 	print_list(head);
 	
-	strcpy(data.name,"¹è");
+	strcpy(data.name,"Â¹Ã¨");
 	head= insert_first(head,data);
 	print_list(head);
 	
-	strcpy(data.name,"Æ÷µµ");
+	strcpy(data.name,"Ã†Ã·ÂµÂµ");
 	head= insert_first(head,data);
 	print_list(head);
 	return 0;
