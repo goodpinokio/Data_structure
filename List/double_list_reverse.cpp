@@ -10,12 +10,12 @@ typedef struct NodeList {
 
 void reverseprint(Node* head) {
    Node* a;
-   printf("ÀÔ·Âµ¥ÀÌÅÍ Ãâ·Â\n");
+   printf("ì…ë ¥ë°ì´í„° ì¶œë ¥\n");
    for (a= head->llink; a!=head ; a = a->llink)
    {
       printf("<-| |%d| |-> ", a->data);
    }
-   printf("\n¿ª¼ø Ãâ·Â\n");
+   printf("\nì—­ìˆœ ì¶œë ¥\n");
    for (a = head->rlink; a != head; a = a->rlink)
    {
       printf("<-| |%d| |-> ", a->data);
@@ -38,13 +38,13 @@ int main() {
    head->llink = head;
    int num = NULL;
 
-   printf("³ëµåÀÇ °³¼öÀÔ·Â: ");
+   printf("ë…¸ë“œì˜ ê°œìˆ˜ì…ë ¥: ");
    scanf("%d", &num);
 
    for (int i = 0; i < num; i++)
    {
       int data = NULL;
-      printf("³ëµå #%d µ¥ÀÌÅÍ : ", i + 1);
+      printf("ë…¸ë“œ #%d ë°ì´í„° : ", i + 1);
       scanf("%d", &data);
       Insert(&head,data);
 
