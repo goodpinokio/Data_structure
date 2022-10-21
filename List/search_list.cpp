@@ -24,8 +24,8 @@ ListNode *add(ListNode *head, element item) {
 void print_list(ListNode *head) {
     for (ListNode *p = head; p != NULL; p = p->link) 
 	{
-        printf("°úÀÏÀÌ¸§: %s \n", p->data.name);
-        printf("´çµµ: %d \n", p->data.dang);
+        printf("ê³¼ì¼ì´ë¦„: %s \n", p->data.name);
+        printf("ë‹¹ë„: %d \n", p->data.dang);
         printf(" | \n");
         printf(" | \n");
     }
@@ -43,17 +43,17 @@ void max(ListNode *head) {
 		} 
         p = p->link;
     }
-    printf(" °¡Àå ´çÀÌ ³ôÀº °úÀÏÀº : %s ±×¸®°í ´çµµ´Â : %d", nick,max);
+    printf(" ê°€ì¥ ë‹¹ì´ ë†’ì€ ê³¼ì¼ì€ : %s ê·¸ë¦¬ê³  ë‹¹ë„ëŠ” : %d", nick,max);
 }
 int main(void) 
 {	
     ListNode *head = NULL;
     
-    element h1 = {"»ç°ú", 34};
-    element h2 = {"¹è", 27};
-    element h3 = {"Å°À§", 48};
-    element h4 = {"ÆÄÀÎ¾ÖÇÃ", 30};
-	element h5 = {"¹Ù³ª³ª", 34};
+    element h1 = {"ì‚¬ê³¼", 34};
+    element h2 = {"ë°°", 27};
+    element h3 = {"í‚¤ìœ„", 48};
+    element h4 = {"íŒŒì¸ì• í”Œ", 30};
+	element h5 = {"ë°”ë‚˜ë‚˜", 34};
 
     head = add(head, h1);
     head = add(head, h2);
