@@ -3,26 +3,26 @@
 #define MAX_QUEUE_SIZE 5
 
 typedef int element;
-typedef struct { 				// Å¥ Å¸ÀÔ
+typedef struct { 				// í íƒ€ì…
 	int  front;
 	int rear;
 	element  data[MAX_QUEUE_SIZE];
 } QueueType;
 
 
-// ¿À·ù ÇÔ¼ö
+// ì˜¤ë¥˜ í•¨ìˆ˜
 void error(char *message)
 {
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
-//  Å¥ÀÇ ÃÊ±âÈ­ ÇÔ¼ö ÀÛ¼º
+//  íì˜ ì´ˆê¸°í™” í•¨ìˆ˜ ì‘ì„±
 void init_queue(QueueType *q)
 {
 	q->rear = -1;
 	q->front = -1;
 }
-// Å¥ ÇÁ¸°Æ®
+// í í”„ë¦°íŠ¸
 void queue_print(QueueType *q)
 {
 	for(int i=0; i <MAX_QUEUE_SIZE;i++){
@@ -33,7 +33,7 @@ void queue_print(QueueType *q)
 	}
 	printf("\n");
 }
-// Æ÷È­
+// í¬í™”
 int is_full(QueueType *q)
 {
 	if(q->rear == MAX_QUEUE_SIZE -1)
@@ -41,7 +41,7 @@ int is_full(QueueType *q)
 	else 
 		return 0;
 }
-// °ø¹é
+// ê³µë°±
 int is_empty(QueueType *q)
 {
 	if(q->front == q->rear)
@@ -49,11 +49,11 @@ int is_empty(QueueType *q)
 	else 
 		return 0;
 }
-// Å¥ »ğÀÔ
+// í ì‚½ì…
 void enqueue(QueueType *q, int item)
 {
 	if(is_full(q)){
-		error("Å¥°¡ Æ÷È­»óÅÂÀÔ´Ï´Ù.");
+		error("íê°€ í¬í™”ìƒíƒœì…ë‹ˆë‹¤.");
 		return;
 	}
 	q->data[++(q->rear)]=item;
@@ -62,7 +62,7 @@ void enqueue(QueueType *q, int item)
 int dequeue(QueueType *q)
 {
 	if(is_empty(q)){
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù.");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤.");
 		return -1; 
 	}
 	int item = q->data[++(q->front)];
