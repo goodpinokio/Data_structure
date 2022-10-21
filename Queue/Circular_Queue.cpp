@@ -3,23 +3,23 @@
 #define MAX_QUEUE_SIZE 10
 
 typedef int element;
-typedef struct { 				// Å¥ Å¸ÀÔ
+typedef struct { 				// í íƒ€ì…
 	element  data[MAX_QUEUE_SIZE];
 	int  front,rear;
 } DequeType;
 
-// ¿À·ù ÇÔ¼ö
+// ì˜¤ë¥˜ í•¨ìˆ˜
 void error(char *message)
 {
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
-// ÃÊ±âÈ­ 
+// ì´ˆê¸°í™” 
 void init_deque(DequeType *q)
 {
 	q->front = q->rear = 0;
 }
-// °ø¹é
+// ê³µë°±
 int is_empty(DequeType *q)
 {
 	return (q->front == q->rear);
@@ -48,16 +48,16 @@ void deque_print(DequeType *q)
 void add_rear(DequeType *q,element item)
 {
 	if(is_full(q))
-		error("Å¥°¡ Æ÷È­»óÅÂÀÔ´Ï´Ù.");
+		error("íê°€ í¬í™”ìƒíƒœì…ë‹ˆë‹¤.");
 	q->rear = (q->rear+1)%MAX_QUEUE_SIZE;
 	q->data[q->rear] = item;
 }
 
-//»èÁ¦ ÇÔ¼ö
+//ì‚­ì œ í•¨ìˆ˜
 element delete_front(DequeType *q)
 {
 	if(is_empty(q))
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù.");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤.");
 	q->front = (q->front + 1)%MAX_QUEUE_SIZE;
 	return q->data[q->front]; 
 } 
@@ -65,14 +65,14 @@ element delete_front(DequeType *q)
 element get_front(DequeType *q)
 {
 	if (is_empty(q))
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù.");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤.");
 	return q->data[(q->front+1)%MAX_QUEUE_SIZE];
 }
 
 void add_front(DequeType *q, element val)
 {
 	if(is_full(q))
-		error("Å¥°¡ Æ÷È­»óÅÂÀÔ´Ï´Ù");
+		error("íê°€ í¬í™”ìƒíƒœì…ë‹ˆë‹¤");
 	q->data[q->front] = val;
 	q->front = (q->front - 1 + MAX_QUEUE_SIZE)%MAX_QUEUE_SIZE;
 }
@@ -81,7 +81,7 @@ element delete_rear(DequeType *q)
 {
 	int prev = q->rear;
 	if(is_empty(q))
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤");
 	q->rear = (q->rear -1 + MAX_QUEUE_SIZE)%MAX_QUEUE_SIZE;
 	return q->data[prev];
 }
@@ -89,7 +89,7 @@ element delete_rear(DequeType *q)
 element get_rear(DequeType *q)
 {
 	if(is_empty(q))
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤");
 	return q->data[q->rear];
 }
 
@@ -103,7 +103,7 @@ int main(void)
 		add_front(&queue,i);
 		if(i==9)
 		{
-			printf("¼±ÇüÅ¥ enque %dÈ¸ = ",i);
+			printf("ì„ í˜•í enque %díšŒ = ",i);
 			deque_print(&queue);
 		}
 		
@@ -113,7 +113,7 @@ int main(void)
 		delete_rear(&queue);
 		printf("dequeue() --> %d \n",i+1);
 		if(i==2){
-			printf("¼±ÇüÅ¥ dequeue %d È¸ = ",i+1);
+			printf("ì„ í˜•í dequeue %d íšŒ = ",i+1);
 			deque_print(&queue);
 		}
 	}
